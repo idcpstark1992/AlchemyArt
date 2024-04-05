@@ -18,7 +18,6 @@ namespace UI
             _pointsViewModel = new(_pointsModel);
             _pointsViewModel.Data.Subscribe(OnPlayedCards);
         }
-
         private void OnDisable()
         {
             _pointsModel.OnDestroy();
@@ -28,12 +27,11 @@ namespace UI
             LeanTween.scale(_printPoints.gameObject, Vector3.one * 2f, .5f).setLoopPingPong(1).setEaseInOutElastic();
             _printPoints.SetText(_vca.ToString());
         }
-
-        public void OnGameIdle()
+        public void  OnGameIdle()
         {
             _gamePointsTransform.gameObject.SetActive(false);
         }
-        public void OnGameActor()
+        public void  OnGameActor()
         {
             _gamePointsTransform.gameObject.SetActive(true);
         }

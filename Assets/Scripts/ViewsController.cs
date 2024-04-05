@@ -30,14 +30,10 @@ namespace UI
         public void OnActorGamePlay()
         {
             _viewGamePoints.OnGameActor();
-            if (GameActorsManager.CurrentActor.ActorType == Commons.E_Actors.AI) 
-            {
+            if (GameActorsManager.CurrentActor.ActorType == Commons.E_Actors.AI)
                 _buttonControllers.OnAIGameActor();
-            }
             else
-            {
                 _buttonControllers.OnGameActor();
-            }
         }
         public void OnSwitchedActor()
         {

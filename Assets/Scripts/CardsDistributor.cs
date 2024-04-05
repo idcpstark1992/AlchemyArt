@@ -16,10 +16,8 @@ namespace Controllers
         public void CheckAITurn()
         {
             if(GameActorsManager.CurrentActor.ActorType == E_Actors.AI)
-            {
                 StartCoroutine(CAICards());
-            }
-            
+
         }
         private IEnumerator CStartPrimaryCards()
         {

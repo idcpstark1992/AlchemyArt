@@ -10,11 +10,11 @@
         {
             CurrentBetAmount = amount;
         }
-        public static void DeleteBetAmount()
+        public static void  DeleteBetAmount()
         {
             CurrentBetAmount = 0;
         }
-        public static void SetActorWinner(bool _actor)
+        public static void  SetActorWinner(bool _actor)
         {
             IsPlayerActorWinner = _actor;   
         }

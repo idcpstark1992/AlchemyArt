@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class Marketplace : MonoBehaviour
 {
     [SerializeField] private List<SoulsMarketItem> _marketItemsList;
-    [SerializeField] private CanvasGroup _canvas;
-    [SerializeField] private TextMeshProUGUI _printSoulsAmount;
-    [SerializeField] private UIButtonsController _buttonsController;
-    [SerializeField] private Button _btnCloseMarketPlace;
+    [SerializeField] private CanvasGroup           _canvas;
+    [SerializeField] private TextMeshProUGUI       _printSoulsAmount;
+    [SerializeField] private UIButtonsController   _buttonsController;
+    [SerializeField] private Button                _btnCloseMarketPlace;
     private void Awake()
     {
         _canvas.alpha           = 0f;
@@ -23,10 +23,9 @@ public class Marketplace : MonoBehaviour
         LeanTween.alphaCanvas(_canvas, 1, .5f);
         _canvas.interactable = true;
         _canvas.blocksRaycasts = true;
+
         for (int i = 0; i < _marketItemsList.Count; i++)
-        {
             _marketItemsList[i].InitItem();
-        }
     }
     public void SetSoulsCounter (int _amount)
     {

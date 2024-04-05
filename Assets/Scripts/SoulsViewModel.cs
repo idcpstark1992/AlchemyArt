@@ -40,29 +40,27 @@ namespace Data
             _soulsmodel.Data.Subscribe(GetData);
             EventsListener.AddListener<int>(E_ListenerID.ON_PLAYER_WIN.ToString(), SetPlayerReward);
         }
-        private void OnDisable()
+        private void   OnDisable()
         {
             EventsListener.RemoveListener<int>(E_ListenerID.ON_PLAYER_WIN.ToString(), SetPlayerReward);
-        }
-
-        
-        public void     GetData(int _datain)
+        }     
+        public void    GetData(int _datain)
         {
             _data.Value = _datain;
             BetUtils.SetPlayerSoulsAmount(_data.Value);
         }
-        public void     ResetBetAmount()
+        public void    ResetBetAmount()
         {
             _betValue = 0;
             _currentBetData.Value = _betValue;
         }
-        public void     SetBetAmount(int _bet)
+        public void    SetBetAmount(int _bet)
         {
             _betValue = Mathf.Clamp(_betValue + _bet, 1, _data.Value);
             CheckButtonConditions(_betValue);
             _currentBetData.Value = _betValue;
         }
-        private void    CheckButtonConditions(int _value)
+        private void   CheckButtonConditions(int _value)
         {
             if (_value>0 && _value < _data.Value)
             {
@@ -87,12 +85,12 @@ namespace Data
             }
             _blockBetButtons.Value = _contextButtons;
         }
-        public void     SetBet() 
+        public void    SetBet() 
         { 
             _soulsmodel.OnDataChanged(_data.Value - _betValue);
             BetUtils.SetBetAmount(_betValue);
         }
-        public void     SetPlayerReward(int _rewardMultipler)
+        public void    SetPlayerReward(int _rewardMultipler)
         {
             int m_totalAmount = _data.Value + (BetUtils.CurrentBetAmount * _rewardMultipler);
             _soulsmodel.OnDataChanged(m_totalAmount);

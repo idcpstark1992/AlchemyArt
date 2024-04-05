@@ -44,11 +44,11 @@ namespace Data
             _stateExecutionDictionary.Add(E_GamePhase.GAME_ACTOR_POINTS_CHECK_MANUAL, GameActionPointManualComparer);
             _stateExecutionDictionary.Add(E_GamePhase.GAME_RESTARTED, OnRestartedGame);
         }
-        private void OnEnable()
+        private void  OnEnable()
         {
             EventsListener.AddListener<E_GamePhase>(E_ListenerID.ON_GAME_PHASE.ToString(), OnStateChanged);
         }
-        private void OnDisable()
+        private void  OnDisable()
         {
             EventsListener.RemoveListener<E_GamePhase>(E_ListenerID.ON_GAME_PHASE.ToString(), OnStateChanged);
             EventsListener.RemoveListenerRoot(E_ListenerID.ON_GAME_PHASE.ToString());
