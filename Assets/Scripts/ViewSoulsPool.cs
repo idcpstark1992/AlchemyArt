@@ -98,7 +98,7 @@ namespace UI
                 HidePanel();
             }
         }
-        public void OnRestarted()
+        public void  OnRestarted()
         {
             SetBetAmount(1);
         }

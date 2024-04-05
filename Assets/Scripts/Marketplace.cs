@@ -23,6 +23,10 @@ public class Marketplace : MonoBehaviour
         LeanTween.alphaCanvas(_canvas, 1, .5f);
         _canvas.interactable = true;
         _canvas.blocksRaycasts = true;
+        for (int i = 0; i < _marketItemsList.Count; i++)
+        {
+            _marketItemsList[i].InitItem();
+        }
     }
     public void SetSoulsCounter (int _amount)
     {

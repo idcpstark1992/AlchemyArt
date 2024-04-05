@@ -1,3 +1,4 @@
+using Controllers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,9 +20,9 @@ public class SoulsMarketItem : MonoBehaviour
     {
 
     }
-    public void InitItem(bool _isBuyed, int _buyerid) 
+    public void InitItem() 
     {
-
+        _buyButton.interactable = BetUtils.PlayerSoulsAmount >= _soulsCost;
     } 
     public void OnShowPreview()
     {
